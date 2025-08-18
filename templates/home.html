@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}หน้าแรก{% endblock title %}
+
+{% block content %}
+<div class="position-relative" style="min-height: 100vh;">
+    <!-- ลูกโลกหมุนมุมล่างซ้าย -->
+    <div style="position: absolute; bottom: 20px; left: 20px; z-index: 1000;">
+        <div class="globe-spin">
+            <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="28" fill="rgba(35,37,38,0.7)" stroke="#08d9d6" stroke-width="3"/>
+                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
+            </svg>
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="card shadow-lg border-0" style="background: rgba(30,30,30,0.3);">
+            <div class="card-header bg-dark text-white text-center border-0">
+                  <div style="position: absolute; bottom: 20px; left: 10px; z-index: 1000;">
+        <div class="globe-spin">
+            <svg width="40" height="600" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="28" fill="rgba(35,37,38,0.7)" stroke="#08d9d6" stroke-width="3"/>
+                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
+            </svg>
+        </div>
+    </div>
+                <h2 class="mb-0" style="letter-spacing:0.1em; color:#ff2e63; text-shadow:0 0 10px #ff2e63,0 0 40px #232526;">แนะนำตัว</h2>
+            </div>
+            <div class="card-body text-center">
+                <p class="fs-4 mb-3" style="color:#08d9d6; text-shadow:0 0 5px #08d9d6;">ชื่อ: Pongphisut Buahom</p>
+                <p class="fs-4 mb-3" style="color:#08d9d6; text-shadow:0 0 5px #08d9d6;">เลขรหัส: 6712732111</p>
+                <p class="fs-4 mb-3" style="color:#08d9d6; text-shadow:0 0 5px #08d9d6">คณะ: ศิลปศาสตร์และวิทยาศาสตร์</p>
+                <p class="fs-4 mb-3" style="color:#08d9d6; text-shadow:0 0 5px #08d9d6">สาขา: วิทยาการคอมพิวเตอร์</p>
+                <p class="fs-4 mb-3" style="color:#08d9d6; text-shadow:0 0 5px #08d9d6">ชั้นปี: 2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.globe-spin {
+    animation: globe-rotate 3s linear infinite;
+    filter: drop-shadow(0 0 8px #08d9d6);
+}
+@keyframes globe-rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+.card-header h3, .card-header h2 {
+    animation: flicker1984 2s infinite alternate;
+}
+@keyframes flicker1984 {
+    0% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
+    50% { opacity: 0.85; text-shadow: 0 0 20px #ff2e63, 0 0 60px #232526; }
+    100% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
+}
+.card {
+    box-shadow: 0 0 20px #232526, 0 0 40px #ff2e63 inset;
+}
+
+</style>
+{% endblock content %}

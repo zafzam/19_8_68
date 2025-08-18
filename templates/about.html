@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}เกี่ยวกับเรา{% endblock title %}
+
+{% block content %}
+<div class="position-relative py-5">
+    <!-- ลูกโลกหมุนมุมซ้ายบน -->
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 10;">
+        <div class="globe-spin">
+            <svg width="60" height="60" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="28" fill="#232526" stroke="#08d9d6" stroke-width="3"/>
+                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
+            </svg>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="card shadow-lg border-0" style="background: rgba(30,30,30,0.95); border: 2px solid #ff2e63;">
+                    <div class="card-header text-center border-0" style="background: #232526; color: #ff2e63; letter-spacing: 0.1em; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526;">
+                        <h3 class="mb-0" style="animation: flicker1984 2s infinite alternate;">เกี่ยวกับฉัน</h3>
+                         <!-- ลูกโลกหมุนมุมซ้ายบนของ card -->
+                    <div style="position: absolute; top: -5px; left: 10px; z-index: 10;">
+                        <div class="globe-spin">
+                            <svg width="35" height="60" viewBox="0 0 60 60">
+                                <circle cx="30" cy="30" r="28" fill="#232526" stroke="#08d9d6" stroke-width="3"/>
+                                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="card-body" style="color: #08d9d6; font-size: 1.2rem;">
+                        <p style="text-shadow: 0 0 5px #08d9d6;">
+                            ผมเกิดในอำเภอเมือง แต่แต่ก่อนไปอยู่บ้านที่นาๆบ่อยๆ แต่ถึงจะไปอยู่นาก็มีโน๊ตบุ๊คของพ่อให้เล่น เลยชอบคอม<br>
+                            เที่ยงเล่นคอม เย็นไปนา กลับมาเล่นคอม ดึกไปใส่ปลา<br>
+                            <br>
+                            <span style="text-shadow: 0 0 5px #08d9d6;">เลยมีหลายเส้นทางอาชีพที่อยากไป ทั้งใช้คอมในห้องก็ได้ ไปลุยสนามก็ดี</span>
+                        </p>
+                        <hr style="border-color:#ff2e63;">
+                        <ul class="list-unstyled">
+                            <li><strong>ชื่อ:</strong> Pongphisut Buahom</li>
+                            <li><strong>การศึกษา:</strong> ม.ต้น/ปลาย โรงเรียนสตรีสิริเกศ</li>
+                            <li><strong>ปัจจุบัน:</strong> นักศึกษาวิทยาการคอมพิวเตอร์/นักศึกษาวิชาทหาร</li>
+                            {% comment %} <li><strong>ความสนใจ:</strong> เทคโนโลยี, ตำรวจทหารข้าราชการ, นิยายลึกๆ, นวัตกรรม และอื่นๆ</li> {% endcomment %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+/* ลูกโลกหมุน */
+.globe-spin {
+    animation: globe-rotate 3s linear infinite;
+    filter: drop-shadow(0 0 8px #08d9d6);
+}
+@keyframes globe-rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+/* ฟอนต์และแสงแบบ dystopian */
+.card-header h3 {
+    animation: flicker1984 2s infinite alternate;
+}
+@keyframes flicker1984 {
+    0% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
+    50% { opacity: 0.85; text-shadow: 0 0 20px #ff2e63, 0 0 60px #232526; }
+    100% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
+}
+.card {
+    box-shadow: 0 0 20px #232526, 0 0 40px #ff2e63 inset;
+}
+</style>
+
+{% endblock content %}

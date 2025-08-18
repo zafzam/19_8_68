@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card mx-auto w-50" style="max-width:400px;">
+    <div class="card-body">
+        <form method="post" action="{% url 'for_page' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">ใส่เลขสุ่ม</label>
+                <input 
+                type="number" 
+                class="form-control" 
+                id="count" 
+                name="number"
+                aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">ใส่เลข</div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>   
+
+
+<div class="card ms-auto" style="width: 28rem; float: right;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body" style="overflow-x:auto;">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in count %}
+         <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}ติดต่อเรา{% endblock title %}
+
+{% block content %}
+<div class="position-relative py-5">
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0 position-relative" 
+                style="background: rgba(30,30,30,0.92); border: 2px solid #ff2e63;">
+                   
+                    <div class="card-header text-center border-0" style="background: #232526; color: #ff2e63; letter-spacing: 0.1em; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; position: relative; z-index: 20;">
+                        <h4 class="mb-0">ติดต่อเรา</h4>
+                         <!-- ลูกโลกหมุนมุมซ้ายบนของ card -->
+                    <div style="position: absolute; top: -8px; left: 10px; z-index: 10;">
+                        <div class="globe-spin">
+                            <svg width="35" height="60" viewBox="0 0 60 60">
+                                <circle cx="30" cy="30" r="28" fill="#232526" stroke="#08d9d6" stroke-width="3"/>
+                                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
+                                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card-body" style="color: #08d9d6;">
+                        <ul class="list-group list-group-flush" style="background: transparent;">
+                            <li class="list-group-item bg-transparent border-0" style="color:#ff2e63;">
+                                <i class="fab fa-facebook-square"></i> Facebook: <span style="color:#08d9d6;">Pongphisut Buahom</span>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0" style="color:#ff2e63;">
+                                <i class="fab fa-line"></i> Line: <span style="color:#08d9d6;">343191029383374565</span>
+                            </li>
+                            {% comment %} <li class="list-group-item bg-transparent border-0" style="color:#ff2e63;">
+                                <i class="fas fa-envelope"></i> Email: <span style="color:#08d9d6;">zcirpongphisut2549@email.com</span> {% endcomment %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.globe-spin {
+    animation: globe-rotate 3s linear infinite;
+    filter: drop-shadow(0 0 8px #08d9d6);
+}
+@keyframes globe-rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+.card-header h4, .btn {
+    animation: flicker1984 2s infinite alternate;
+}
+@keyframes flicker1984 {
+    0% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
+    50% { opacity: 0.85; text-shadow: 0 0 20px #ff2e63, 0 0 60px #232526; }
+    100% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
+}
+.card {
+    box-shadow: 0 0 20px #232526, 0 0 40px #ff2e63 inset;
+}
+</style>
+{% endblock content %}

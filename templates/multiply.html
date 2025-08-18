@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+.dystopian-card {
+    background: #222;
+    color: #e0e0e0;
+    border: 2px solid #444;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+.dystopian-header {
+    background: linear-gradient(90deg, #444 0%, #222 100%);
+    color: #ff5252;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #ff5252;
+    border-radius: 12px 12px 0 0;
+    padding: 0.75rem 1rem;
+}
+.dystopian-form-label {
+    color: #ff5252;
+    font-weight: bold;
+}
+.dystopian-btn {
+    background: #ff5252;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255,82,82,0.2);
+}
+.dystopian-table th, .dystopian-table td {
+    background: #222;
+    color: #e0e0e0;
+    border-color: #444;
+}
+.dystopian-table th {
+    color: #ff5252;
+}
+</style>
+
+<div class="card dystopian-card mx-auto mb-4" style="width: 28rem;">
+    <div class="dystopian-header">
+        สูตรคูณ
+    </div>
+    <div class="card-body">
+        <form method="post" action="{% url 'multiply_page' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="count" class="form-label dystopian-form-label">ใส่แม่สูตรคูณ</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="count" 
+                name="number"
+                aria-describedby="emailHelp"
+                style="background:#333; color:#ff5252; border:1px solid #ff5252;">
+                <div id="emailHelp" class="form-text" style="color:#888;">กรอกเลข</div>
+            </div>
+            <button type="submit" class="btn dystopian-btn">คำนวณ</button>
+        </form>
+    </div>
+</div>
+
+<div class="card dystopian-card mx-auto" style="width: 28rem;">
+    <div class="dystopian-header">
+        ตาราง
+    </div>
+    <div class="card-body" style="overflow-x:auto;">
+        <table class="table dystopian-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">number</th>
+                    <th scope="col">multiply</th>
+                    <th scope="col">results</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a, b, c in results %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ b }}</td>
+                    <td>{{ a }}</td>
+                    <td>{{ c }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
