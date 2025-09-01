@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}ติดต่อเรา{% endblock title %}
+
+{% block content %}
+<div class="position-relative py-5">
+<h1>{{ title }}</h1>
+<div>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">รหัสนักศึกษา</th>
+      <th scope="col">ชื่อ</th>
+      <th scope="col">สกุล</th>
+      <th scope="col">อายุ</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+<tr>
+  <th scope="row">{{ forloop.counter }}</th>
+  <td>{{ student.stid }}</td>
+  <td>{{ student.first_name }}</td>
+  <td>{{ student.last_name }}</td>
+  <td>{{ student.age }}</td>
+</tr>
+{% endfor %}
+    
+ 
+  </tbody>
+</table>
+
+{% endblock content %}

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
 # from . import views
+from . import models
+
 
 
 
@@ -46,6 +48,28 @@ def multiply(request):
     context['results'] = [(multiplier, i, multiplier * i) for i in context['count']]
 
     return render(request, 'multiply.html', context)
+
+def students(request):
+    context = {}
+    context['title'] = "This is the students page."
+
+    students = models.Students.objects.all()
+
+    context['students'] = students
+
+    return render(request, 'students.html', context)
+
+
+def subjects(request):
+    context = {}
+    context['title'] = "subjects"
+
+    subjects = models.subjects.objects.all()
+
+    context['subjects'] = subjects
+    
+    return render(request, 'subjects.html', context)
+
 
 # urls.py
 # from django.urls import path

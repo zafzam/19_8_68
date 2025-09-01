@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-s1i97njdsx1=li)5s9-scgx^3y*xty^)0)=&udoc(-vbfk&u@t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -76,10 +76,20 @@ WSGI_APPLICATION = 'TwoOneRemakeFix.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     # 'default': {
+#     #     # 'ENGINE': 'django.db.backends.sqlite3',
+#     #     # 'NAME': BASE_DIR / 'db.sqlite3',
+#     # }
+# }
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.seyljdxhextfjahvhjyo',
+        'PASSWORD': 'yLsEyMRA6L3TbL3R',
+        'HOST': 'aws-1-ap-southeast-1.pooler.supabase.com',
+        'PORT': '5432',
     }
 }
 

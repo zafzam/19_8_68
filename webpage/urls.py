@@ -10,4 +10,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('for/', views.forpage, name='for_page'),
     path('multiply/', views.multiply, name='multiply_page'),
+    path('students/', views.students, name='students_page'),
+    path('subjects/', views.subjects, name='subjects_page'),
 ]
